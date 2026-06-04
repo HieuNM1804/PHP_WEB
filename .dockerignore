@@ -1,0 +1,6 @@
+.git
+.vscode
+docker-compose.override.yml
+*.log
+Thumbs.db
+.DS_Store
