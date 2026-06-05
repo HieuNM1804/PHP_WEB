@@ -35,8 +35,9 @@ Mặc định project dùng:
 - User: `root`
 - Password: rỗng
 - Host: `localhost`
+- Port: `3306`
 
-Nếu MySQL của máy bạn có mật khẩu, sửa `DB_USER` và `DB_PASS` trước khi import database. Nên giữ `DB_NAME` là `web` nếu dùng các file SQL có sẵn.
+Nếu MySQL của máy bạn có mật khẩu, sửa `DB_USER` và `DB_PASS` trước khi import database. Nếu MySQL chạy port khác, ví dụ `3308`, sửa `DB_PORT` trong `config/database.php`. Nên giữ `DB_NAME` là `web` nếu dùng các file SQL có sẵn.
 
 4. Import database.
 
@@ -67,8 +68,8 @@ Nếu bạn đổi tên thư mục project, thay `PHP_WEB` trong URL bằng đú
 Lưu ý khi chạy bằng Laragon:
 
 - File `.env` chỉ dùng cho Docker. Laragon đọc cấu hình database trong `config/database.php`.
-- Nếu MySQL của bạn không dùng `root` hoặc có mật khẩu, sửa lại `DB_USER` và `DB_PASS` trong `config/database.php`.
-- Nếu database `web` đã tồn tại hoặc từng import lỗi tiếng Việt, hãy xóa/drop database `web` rồi import lại 3 file SQL theo đúng thứ tự ở bước 3.
+- Nếu MySQL của bạn không dùng `root`, có mật khẩu hoặc chạy port khác `3306`, sửa lại `DB_USER`, `DB_PASS`, `DB_PORT` trong `config/database.php`.
+- Nếu database `web` đã tồn tại hoặc từng import lỗi tiếng Việt, hãy xóa/drop database `web` rồi import lại bằng lệnh setup hoặc import thủ công 3 file SQL theo đúng thứ tự.
 - Nếu bật Virtual Host của Laragon, bạn cũng có thể mở theo domain Laragon tạo, ví dụ `http://php_web.test/admin/login.php`.
 - Nếu Apache/MySQL trong Laragon không start được, thường là do trùng port `80`, `443` hoặc `3306` với phần mềm khác.
 

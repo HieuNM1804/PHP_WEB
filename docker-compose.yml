@@ -4,6 +4,7 @@ services:
     environment:
       APP_BASE_URL: /
       DB_HOST: db
+      DB_PORT: 3306
       DB_NAME: web
       DB_USER: gs25_user
       DB_PASS: gs25_pass

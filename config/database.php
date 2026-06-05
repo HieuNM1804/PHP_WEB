@@ -11,6 +11,7 @@ function envValue(string $key, string $default = ''): string
 }
 
 define('DB_HOST', envValue('DB_HOST', 'localhost'));
+define('DB_PORT', envValue('DB_PORT', '3306'));
 define('DB_NAME', envValue('DB_NAME', 'web'));
 define('DB_USER', envValue('DB_USER', 'root'));
 define('DB_PASS', envValue('DB_PASS', ''));
@@ -20,7 +21,7 @@ function getDBConnection(): PDO
 {
     static $pdo = null;
     if ($pdo === null) {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+        $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
