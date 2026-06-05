@@ -69,17 +69,38 @@ function redirect(string $url): void
 /**
  * Base URL
  */
+function normalizeBaseUrl(string $baseUrl): string
+{
+    $baseUrl = trim($baseUrl);
+
+    if ($baseUrl === '' || $baseUrl === '/') {
+        return '/';
+    }
+
+    return '/' . trim($baseUrl, '/') . '/';
+}
+
 function appBaseUrl(): string
 {
     $baseUrl = getenv('APP_BASE_URL');
 
-    if ($baseUrl === false || $baseUrl === '') {
-        $baseUrl = '/gs25/';
+    if ($baseUrl !== false && $baseUrl !== '') {
+        return normalizeBaseUrl($baseUrl);
     }
 
-    $baseUrl = '/' . trim($baseUrl, '/') . '/';
+    $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
 
-    return $baseUrl === '//' ? '/' : $baseUrl;
+    if ($scriptName === '') {
+        return '/';
+    }
+
+    $adminPathPosition = strpos($scriptName, '/admin/');
+
+    if ($adminPathPosition !== false) {
+        return normalizeBaseUrl(substr($scriptName, 0, $adminPathPosition));
+    }
+
+    return normalizeBaseUrl(dirname($scriptName));
 }
 
 function baseUrl(string $path = ''): string

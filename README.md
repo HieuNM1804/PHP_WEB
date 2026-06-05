@@ -20,7 +20,7 @@ Các bước chạy:
 1. Clone project vào thư mục `www` của Laragon:
 
 ```bash
-git clone https://github.com/HieuNM1804/PHP_WEB.git C:\laragon\www\gs25
+git clone https://github.com/HieuNM1804/PHP_WEB.git C:\laragon\www\PHP_WEB
 ```
 
 2. Mở Laragon và start Apache/Nginx + MySQL.
@@ -45,10 +45,10 @@ Mặc định project dùng:
 5. Mở trình duyệt:
 
 ```text
-http://localhost/gs25/admin/login.php
+http://localhost/PHP_WEB/admin/login.php
 ```
 
-Lưu ý: nếu chạy bằng Laragon theo cấu hình mặc định, nên đặt tên thư mục project là `gs25`.
+Nếu bạn đổi tên thư mục project, thay `PHP_WEB` trong URL bằng đúng tên thư mục đó.
 
 ## Cách 2: Chạy bằng Docker
 
