@@ -27,6 +27,11 @@ git clone https://github.com/HieuNM1804/PHP_WEB.git C:\laragon\www\PHP_WEB
 
 2. Mở Laragon và start Apache/Nginx + MySQL.
 
+Mở phpMyAdmin của Laragon:
+
+- Bấm nút **Database** trong Laragon, hoặc mở URL phpMyAdmin mà Laragon cung cấp.
+- Thường đăng nhập bằng user MySQL local, ví dụ `root` và password rỗng.
+
 3. Kiểm tra cấu hình database trong `config/database.php`.
 
 Mặc định project dùng:
@@ -115,6 +120,14 @@ Sau khi chạy xong:
 - Web admin: http://localhost:8080/admin/login.php
 - phpMyAdmin: http://localhost:8081
 - MySQL từ máy host: `127.0.0.1:3307`
+
+Vào phpMyAdmin Docker tại:
+
+```text
+http://localhost:8081
+```
+
+Project đang cấu hình phpMyAdmin Docker tự kết nối database bằng user `gs25_user`, nên thường không cần nhập lại tài khoản. Nếu phpMyAdmin yêu cầu đăng nhập, dùng thông tin database Docker bên dưới.
 
 Thông tin database Docker:
 
