@@ -94,13 +94,41 @@ Thông tin database trong Docker:
 
 Nếu máy đang dùng sẵn các cổng `8080`, `8081` hoặc `3307`, sửa port trực tiếp trong file `.env`.
 
-Muốn reset database về dữ liệu mẫu:
+Ví dụ:
+
+```env
+WEB_PORT=8090
+DB_PORT=3308
+PHPMYADMIN_PORT=8091
+```
+
+Sau khi đổi port, chạy lại:
+
+```bash
+docker compose up -d
+```
+
+Không cần xóa database khi chỉ đổi port.
+
+### Build lại Docker
+
+Nếu sửa code PHP, Dockerfile hoặc cấu hình build, chạy:
+
+```bash
+docker compose up -d --build
+```
+
+Lệnh này build lại web container nhưng không xóa database.
+
+### Xóa database và import lại từ đầu
+
+Chỉ dùng khi muốn reset dữ liệu mẫu hoặc database đã import lỗi:
 
 ```bash
 docker compose down -v
 docker compose up -d --build
 ```
 
-Lưu ý: `down -v` sẽ xóa dữ liệu MySQL và upload phát sinh trong Docker volume.
+Lưu ý: `down -v` sẽ xóa dữ liệu MySQL và upload phát sinh trong Docker volume. Nếu đã thêm dữ liệu mới cần giữ, hãy backup trước khi chạy lệnh này.
 
 Nếu dữ liệu tiếng Việt bị lỗi mã hóa sau lần chạy cũ, chạy lại hai lệnh reset ở trên để Docker import lại database bằng UTF-8.
