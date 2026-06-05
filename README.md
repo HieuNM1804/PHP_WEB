@@ -52,6 +52,14 @@ http://localhost/PHP_WEB/admin/login.php
 
 Nếu bạn đổi tên thư mục project, thay `PHP_WEB` trong URL bằng đúng tên thư mục đó.
 
+Lưu ý khi chạy bằng Laragon:
+
+- File `.env` chỉ dùng cho Docker. Laragon đọc cấu hình database trong `config/database.php`.
+- Nếu MySQL của bạn không dùng `root` hoặc có mật khẩu, sửa lại `DB_USER` và `DB_PASS` trong `config/database.php`.
+- Nếu database `web` đã tồn tại hoặc từng import lỗi tiếng Việt, hãy xóa/drop database `web` rồi import lại 3 file SQL theo đúng thứ tự ở bước 3.
+- Nếu bật Virtual Host của Laragon, bạn cũng có thể mở theo domain Laragon tạo, ví dụ `http://php_web.test/admin/login.php`.
+- Nếu Apache/MySQL trong Laragon không start được, thường là do trùng port `80`, `443` hoặc `3306` với phần mềm khác.
+
 ## Cách 2: Chạy bằng Docker
 
 Yêu cầu:
