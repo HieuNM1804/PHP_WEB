@@ -27,15 +27,7 @@ git clone https://github.com/HieuNM1804/PHP_WEB.git C:\laragon\www\PHP_WEB
 
 2. Mở Laragon và start Apache/Nginx + MySQL.
 
-3. Vào phpMyAdmin hoặc công cụ quản lý database, import lần lượt các file:
-
-```text
-database.sql
-seed.sql
-docker/mysql/init/03-product-images.sql
-```
-
-4. Kiểm tra cấu hình database trong `config/database.php`.
+3. Kiểm tra cấu hình database trong `config/database.php`.
 
 Mặc định project dùng:
 
@@ -43,6 +35,26 @@ Mặc định project dùng:
 - User: `root`
 - Password: rỗng
 - Host: `localhost`
+
+Nếu MySQL của máy bạn có mật khẩu, sửa `DB_USER` và `DB_PASS` trước khi import database. Nên giữ `DB_NAME` là `web` nếu dùng các file SQL có sẵn.
+
+4. Import database.
+
+Cách nhanh nhất là chạy một lệnh trong terminal tại thư mục project:
+
+```bash
+php setup_database.php --yes
+```
+
+Lệnh này sẽ tự tạo database, tạo bảng, thêm dữ liệu mẫu và gán ảnh sản phẩm. Nếu terminal không nhận lệnh `php`, hãy mở Terminal của Laragon rồi chạy lại.
+
+Hoặc import thủ công bằng phpMyAdmin/công cụ quản lý database theo đúng thứ tự:
+
+```text
+database.sql
+seed.sql
+docker/mysql/init/03-product-images.sql
+```
 
 5. Mở trình duyệt:
 
