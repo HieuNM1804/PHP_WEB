@@ -2,7 +2,9 @@
 
 Ứng dụng quản trị PHP thuần dùng MySQL.
 
-## Tài khoản demo
+## Tài khoản đăng nhập web admin
+
+Dùng tài khoản này để đăng nhập vào trang quản trị:
 
 - Username: `admin`
 - Password: `admin123`
@@ -85,7 +87,9 @@ Sau khi chạy xong:
 - phpMyAdmin: http://localhost:8081
 - MySQL từ máy host: `127.0.0.1:3307`
 
-Thông tin database trong Docker:
+Thông tin database Docker:
+
+Dùng thông tin này khi mở phpMyAdmin hoặc kết nối MySQL bằng DBeaver/MySQL Workbench. Đây không phải tài khoản đăng nhập web admin.
 
 - Database: `web`
 - User: `gs25_user`
