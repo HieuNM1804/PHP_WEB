@@ -92,7 +92,7 @@ Thông tin database trong Docker:
 - Password: `gs25_pass`
 - Root password: `root`
 
-Nếu máy đang dùng sẵn các cổng `8080`, `8081` hoặc `3307`, copy `.env.example` thành `.env` rồi đổi port trong file `.env`.
+Nếu máy đang dùng sẵn các cổng `8080`, `8081` hoặc `3307`, sửa port trực tiếp trong file `.env`.
 
 Muốn reset database về dữ liệu mẫu:
 

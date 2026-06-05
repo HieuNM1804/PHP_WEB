@@ -1,5 +1,6 @@
 .git
 .vscode
+.env
 docker-compose.override.yml
 *.log
 Thumbs.db
