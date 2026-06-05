@@ -37,7 +37,13 @@ Mặc định project dùng:
 - Host: `localhost`
 - Port: `3306`
 
-Nếu MySQL của máy bạn có mật khẩu, sửa `DB_USER` và `DB_PASS` trước khi import database. Nếu MySQL chạy port khác, ví dụ `3308`, sửa `DB_PORT` trong `config/database.php`. Nên giữ `DB_NAME` là `web` nếu dùng các file SQL có sẵn.
+Nếu MySQL của máy bạn có mật khẩu, sửa `DB_USER` và `DB_PASS` trước khi import database. Nếu MySQL chạy port khác, ví dụ `3308`, sửa `DB_PORT` trong `config/database.php`:
+
+```php
+define('DB_PORT', envValue('DB_PORT', '3308'));
+```
+
+Nên giữ `DB_NAME` là `web` nếu dùng các file SQL có sẵn.
 
 4. Import database.
 
@@ -64,6 +70,8 @@ http://localhost/PHP_WEB/admin/login.php
 ```
 
 Nếu bạn đổi tên thư mục project, thay `PHP_WEB` trong URL bằng đúng tên thư mục đó.
+
+Lưu ý: đây là URL web chạy qua Apache/Nginx của Laragon. Không mở web bằng port MySQL như `3306` hoặc `3308`.
 
 Lưu ý khi chạy bằng Laragon:
 
