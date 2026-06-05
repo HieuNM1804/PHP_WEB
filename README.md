@@ -102,3 +102,5 @@ docker compose up -d --build
 ```
 
 Lưu ý: `down -v` sẽ xóa dữ liệu MySQL và upload phát sinh trong Docker volume.
+
+Nếu dữ liệu tiếng Việt bị lỗi mã hóa sau lần chạy cũ, chạy lại hai lệnh reset ở trên để Docker import lại database bằng UTF-8.

@@ -1,3 +1,5 @@
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 USE web;
 
 UPDATE products SET main_image = 'images/ao-thun/1.jpg' WHERE product_id = 1;
